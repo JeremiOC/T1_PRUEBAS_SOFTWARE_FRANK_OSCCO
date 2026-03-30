@@ -35,4 +35,10 @@ class MatriculaServiceTest {
 
         assertEquals("Ingrese una fecha de matrícula válida", resultado);
     }
+    @Test
+    public void testCamposVacios() {
+        String resultado = service.registrar("IN1234", "", "ABC12", 3, "2026-03-29");
+
+        assertEquals("Debe ingresar todos los datos requeridos", resultado);
+    }
 }
