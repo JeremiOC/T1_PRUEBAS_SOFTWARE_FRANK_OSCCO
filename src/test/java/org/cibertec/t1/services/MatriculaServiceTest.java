@@ -29,4 +29,10 @@ class MatriculaServiceTest {
         String resultado = service.registrar("IN1234", "Juan Perez", "ABC12", 7, "2026-03-29");
         assertEquals("La cantidad de créditos debe estar entre 1 y 6", resultado);
     }
+    @Test
+    public void testFechaInvalida() {
+        String resultado = service.registrar("IN1234", "Juan Perez", "ABC12", 3, "2030-12-31");
+
+        assertEquals("Ingrese una fecha de matrícula válida", resultado);
+    }
 }
