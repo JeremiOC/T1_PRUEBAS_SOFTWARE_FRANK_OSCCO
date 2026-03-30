@@ -8,8 +8,9 @@ class MatriculaServiceTest {
     private final MatriculaService service = new MatriculaService();
 
     @Test
-    public void testCodigoMatriculaInvalido() {
-        String resultado = service.registrar("123456", "Juan Perez", "ABC12", 3, "2026-03-29");
-        assertEquals("Ingrese un código de matrícula válido", resultado);
+    public void testNombreInvalido() {
+        //test nombre
+        String resultado = service.registrar("IN1234", "An1", "ABC12", 3, "2026-03-29");
+        assertEquals("El nombre del estudiante debe tener al menos cuatro caracteres alfabéticos", resultado);
     }
 }
