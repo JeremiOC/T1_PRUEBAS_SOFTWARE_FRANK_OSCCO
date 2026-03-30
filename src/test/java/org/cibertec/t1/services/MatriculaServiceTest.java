@@ -24,5 +24,9 @@ class MatriculaServiceTest {
         String resultado = service.registrar("IN1234", "Juan Perez", "ABC1", 3, "2026-03-29");
         assertEquals("Ingrese un código de curso válido", resultado);
     }
-
+    @Test
+    public void testCreditosInvalidos() {
+        String resultado = service.registrar("IN1234", "Juan Perez", "ABC12", 7, "2026-03-29");
+        assertEquals("La cantidad de créditos debe estar entre 1 y 6", resultado);
+    }
 }
