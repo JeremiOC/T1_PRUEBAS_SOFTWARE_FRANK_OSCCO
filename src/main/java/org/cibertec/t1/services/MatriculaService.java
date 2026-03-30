@@ -6,7 +6,9 @@ public class MatriculaService {
             return "Ingrese un código de matrícula válido";
         }
 
-
+        if (!alumno.matches("^[a-zA-Z\\s]{4,}$")) {
+            return "El nombre del estudiante debe tener al menos cuatro caracteres alfabéticos";
+        }
 
         return "La matrícula ha sido registrada correctamente";
     }
