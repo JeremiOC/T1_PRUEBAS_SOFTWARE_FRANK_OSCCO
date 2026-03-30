@@ -12,6 +12,9 @@ public class MatriculaService {
         if (!codCurso.matches("^[a-zA-Z0-9]{5}$")) {
             return "Ingrese un código de curso válido";
         }
+        if (creditos < 1 || creditos > 6) {
+            return "La cantidad de créditos debe estar entre 1 y 6";
+        }
         return "La matrícula ha sido registrada correctamente";
     }
 }
